@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.coll.Model.Blog;
+
 import com.coll.Model.Forum;
 @Repository("forumDAO")
 @Transactional
@@ -80,6 +80,34 @@ public class ForumDAOImpl implements ForumDAO
 		
 		return forum;
 	
+	}
+
+	@Override
+	public boolean rejectForum(Forum forum) {
+		try
+		{
+			forum.setStatus("NA");
+			sessionFactory.getCurrentSession().update(forum);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+
+	@Override
+	public boolean approveForum(Forum forum) {
+		try
+		{
+			forum.setStatus("A");
+			sessionFactory.getCurrentSession().update(forum);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 	}
 
 }

@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table
 @SequenceGenerator(name="forumidseq",sequenceName="myforumseq")
@@ -16,17 +18,20 @@ import javax.persistence.Table;
 	 {
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="forumidseq")
-	 int forumid;
+	 int forumId;
 	 String forumname;
-	 String forumContext;
+	 String forumContent;
+	 @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
 	 Date createDate;
 	 String loginname;
 	 String status;
-	public int getForumid() {
-		return forumid;
+	
+	
+	public int getForumId() {
+		return forumId;
 	}
-	public void setForumid(int forumid) {
-		this.forumid = forumid;
+	public void setForumId(int forumId) {
+		this.forumId = forumId;
 	}
 	public String getForumname() {
 		return forumname;
@@ -34,11 +39,11 @@ import javax.persistence.Table;
 	public void setForumname(String forumname) {
 		this.forumname = forumname;
 	}
-	public String getForumContext() {
-		return forumContext;
+	public String getForumContent() {
+		return forumContent;
 	}
-	public void setForumContext(String forumContext) {
-		this.forumContext = forumContext;
+	public void setForumContent(String forumContent) {
+		this.forumContent = forumContent;
 	}
 	public Date getCreateDate() {
 		return createDate;

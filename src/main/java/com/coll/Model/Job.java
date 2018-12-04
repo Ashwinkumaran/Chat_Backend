@@ -1,6 +1,6 @@
 package com.coll.Model;
 
-import java.util.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,19 +11,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-@SequenceGenerator(name="jobidseq",sequenceName="jobidseq")
+@SequenceGenerator(name="jobidseq",sequenceName="jobidseq",allocationSize = 1)
 public class Job
 {
 @Id
 @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="jobidseq")
-int jobid;
-String desgination;
-String jobdesc;
+ private int jobid;
+private String desgination;
+private String jobdesc;
 String companyname;
-int salary;
-Date expiryDate;
-int experience;
-String skills;
+private int salary;
+private String location;
+private String lastDateToApply;
 public int getJobid() {
 	return jobid;
 }
@@ -54,23 +53,17 @@ public int getSalary() {
 public void setSalary(int salary) {
 	this.salary = salary;
 }
-public Date getExpiryDate() {
-	return expiryDate;
+public String getLastDateToApply() {
+	return lastDateToApply;
 }
-public void setExpiryDate(Date expiryDate) {
-	this.expiryDate = expiryDate;
+public void setLastDateToApply(String lastDateToApply) {
+	this.lastDateToApply = lastDateToApply;
 }
-public int getExperience() {
-	return experience;
+public String getLocation() {
+	return location;
 }
-public void setExperience(int experience) {
-	this.experience = experience;
-}
-public String getSkills() {
-	return skills;
-}
-public void setSkills(String skills) {
-	this.skills = skills;
+public void setLocation(String location) {
+	this.location = location;
 }
 
 

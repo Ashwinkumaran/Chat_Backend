@@ -17,10 +17,10 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
   @Autowired
   SessionFactory sessionFactory;
 	@Override
-	public boolean addComment(BlogComment comment) {
+	public boolean addComment(BlogComment blogcomment) {
 		try
 		{
-			sessionFactory.getCurrentSession().save(comment);
+			sessionFactory.getCurrentSession().save(blogcomment);
 			return true;
 		}
 		catch(Exception e)
@@ -31,10 +31,10 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
 	}
 
 	@Override
-	public boolean deleteComment(BlogComment comment) {
+	public boolean deleteComment(BlogComment blogcomment) {
 		try
 		{
-			sessionFactory.getCurrentSession().delete(comment);
+			sessionFactory.getCurrentSession().delete(blogcomment);
 			return true;
 		}
 		catch(Exception e)

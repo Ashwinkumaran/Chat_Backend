@@ -23,19 +23,19 @@ public class BlogTest {
 		blogDAO=(BlogDAO)context.getBean("blogDAO");
 		
 	}
-	@Ignore
+	//@Ignore
 	@Test
 	public void addblogTest()
 	{
 		Blog blog=new Blog();
 		//blog.setBlogId(1001);
-		blog.setBlogName("Hibernate blog");
-		blog.setBlogDesc("This Blog is for hibernate Learning");
+		blog.setBlogName("pythonblog");
+		blog.setBlogDesc("This Blog is for python Learning");
 		blog.setCreatedate(new java.util.Date());
 		blog.setLikes(0);
 		blog.setDislikes(0);
 		blog.setLoginname("Ashwin");
-		blog.setStatus("na");
+		blog.setStatus("NA");
 		assertTrue("Problem in adding Blog",blogDAO.addBlog(blog));
 	}
 	@Ignore
@@ -68,7 +68,7 @@ public class BlogTest {
 		
 		
 	}
-	
+    @Ignore	
 	@Test
 	public void approvedBlogTest()
 	{
@@ -92,7 +92,7 @@ public class BlogTest {
 	{
 		assertTrue("problem in incrmenting likes",blogDAO.incrementLikes(952));
 	}
-   
+    @Ignore
 	@Test
 	public void incrementDislikesTest()
 	{

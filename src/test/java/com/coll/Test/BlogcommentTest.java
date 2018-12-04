@@ -29,9 +29,9 @@ public class BlogcommentTest
    public void addCommentTest()
    {
 	   BlogComment comment=new BlogComment();
-	   comment.setBlogId(954);
+	   comment.setBlogId(953);
 	   comment.setCommentText("very nice Blog");
-	   comment.setLoginname("Vinoth");
+	   comment.setLoginname("Ashwin");
 	   comment.setCommentDate(new java.util.Date());
 	   assertTrue("Problem in adding comment:",blogCommentDAO.addComment(comment));
    }
@@ -42,6 +42,7 @@ public class BlogcommentTest
 		BlogComment comment=blogCommentDAO.getBlogComment(962);
 		assertTrue("Problem in adding Blog",blogCommentDAO.deleteComment(comment));
 	}
+   @Ignore
    @Test
 	public void listCommentsTest()
 	{

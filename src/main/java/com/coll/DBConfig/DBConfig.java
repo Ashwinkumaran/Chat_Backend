@@ -20,6 +20,7 @@ import com.coll.Model.Forum;
 import com.coll.Model.ForumComment;
 import com.coll.Model.Friend;
 import com.coll.Model.Job;
+import com.coll.Model.ProfilePicture;
 import com.coll.Model.UserDetail;
 
 @Configuration
@@ -42,7 +43,7 @@ public class DBConfig
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
-
+        hibernateProperties.setProperty("hibernate.show_sql", "true");
 		LocalSessionFactoryBuilder localsessionFactory = new LocalSessionFactoryBuilder(getDataSource());
 		localsessionFactory.addProperties(hibernateProperties);
 		localsessionFactory.addAnnotatedClass(Blog.class);	
@@ -51,8 +52,9 @@ public class DBConfig
 		localsessionFactory.addAnnotatedClass(Forum.class);
 		localsessionFactory.addAnnotatedClass(ForumComment.class);
 		localsessionFactory.addAnnotatedClass(Friend.class);
-		localsessionFactory.addAnnotatedClass(ApplyingJob.class);
+	    localsessionFactory.addAnnotatedClass(ApplyingJob.class);
 		localsessionFactory.addAnnotatedClass(Job.class);
+		localsessionFactory.addAnnotatedClass(ProfilePicture.class);
 		SessionFactory sessionFactory = localsessionFactory.buildSessionFactory();
 		return sessionFactory;
 		

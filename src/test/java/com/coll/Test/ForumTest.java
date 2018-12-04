@@ -32,8 +32,8 @@ public class ForumTest {
 	{
 		Forum forum=new Forum();
 		forum.setForumname("test");
-		forum.setForumContext("Test");
-		forum.setLoginname("ashwin");
+		forum.setForumContent("Test");
+		forum.setLoginname("Ashwin");
 		forum.setStatus("NA");
 		forum.setCreateDate(new java.util.Date());
 	assertTrue("Problem in adding new Forum",forumDAO.addForum(forum));
@@ -46,7 +46,7 @@ public class ForumTest {
 	Forum forum=forumDAO.getForum(100);
 		assertTrue("Problem in adding Forum",forumDAO.deleteForum(forum));
 	}
-	//@Ignore
+	@Ignore
 	@Test
 	public void updateForumTest()
 	{
@@ -61,9 +61,9 @@ public class ForumTest {
 		assertTrue("problem in Listing Blog",listForums.size()>0);
 		for(Forum forum:listForums)
 		{
-			System.out.print(forum.getForumid()+"::");
+			System.out.print(forum.getForumId()+"::");
 			System.out.print(forum.getForumname()+"::");
-			System.out.print(forum.getForumContext()+"::");
+			System.out.print(forum.getForumContent()+"::");
 		}
 		
 		

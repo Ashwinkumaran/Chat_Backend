@@ -28,7 +28,7 @@ public class ForumCommentTest {
 	   public void addCommentTest()
 	   {
 		   ForumComment comment=new ForumComment();
-		   comment.setForumId(954);;
+		   comment.setForumId(952);;
 		   comment.setCommentText("test1");
 		   comment.setLoginname("Ashwin");
 		   comment.setCommentDate(new java.util.Date());
@@ -44,7 +44,7 @@ public class ForumCommentTest {
 	   @Test
 		public void listCommentsTest()
 		{
-			List<ForumComment> listComments=forumCommentDAO.listForumComments(954);
+			List<ForumComment> listComments=forumCommentDAO.listForumComments(952);
 			assertTrue("problem in Listing Blog",listComments.size()>0);
 			for(ForumComment comment:listComments)
 			{

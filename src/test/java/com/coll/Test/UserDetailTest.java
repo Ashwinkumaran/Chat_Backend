@@ -28,17 +28,17 @@ public class UserDetailTest {
 	public void registerUserTest()
 	{
 		UserDetail user=new UserDetail();
-		user.setLoginname("kumaran");
-		user.setPassword("pass");
-		user.setUsername(" Kumaran");
+		user.setLoginname("Admin");
+		user.setPassword("1234");
+		user.setUsername(" AshwinKumaran");
 		user.setEmailid("kumaran172@gmail.com");
 		user.setMobileno("9999999999");
 		user.setAddress("Madurai");
-		user.setRole("ROLE_USER");
+		user.setRole("ROLE_ADMIN");
 		assertTrue("Problem in adding User",userdetailDAO.registerUser(user));
 		
 }
-  //@Ignore
+ @Ignore
  @Test
  public void updateUserTest()
    {
